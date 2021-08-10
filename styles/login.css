@@ -11,8 +11,8 @@
   border-bottom:1px solid #757575;
 }
 .input:focus { 
-    outline:none; 
-    box-shadow: none;
+  outline:none; 
+  box-shadow: none;
 }
 label {
   color:#999; 
@@ -75,13 +75,12 @@ label {
   to    { width:0; background:transparent; }
 }
 
-.super-wrapper {
+.super {
   display: flex;
+  flex-wrap: wrap;
   justify-content: center;
   width: 100%;
-  display: block;
   margin: 2rem auto;
-  border: solid 1px black;
 }
 
 h1 {
@@ -90,16 +89,18 @@ h1 {
 }
 
 .red {
-  display: inline-block;
+  display: block;
+  position: relative;
   background-color: red;
   height: 500px;
   width: 300px;
-
 }
 
 .wrapper {
-  display: inline-block;
-  border: solid 1px #5264AE;
+  display: block;
+  margin-left: 2rem;
+  position: relative;
+  border: solid 1px #6b7cc0;
   padding: 2rem;
   border-radius: 2rem;
   margin-top: 0rem;
