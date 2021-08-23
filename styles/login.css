@@ -65,16 +65,6 @@ label {
   pointer-events:none;
   opacity:0.5;
 }
-
-.input:focus ~ .highlight {
-  animation:inputHighlighter 0.3s ease;
-}
-
-@keyframes inputHighlighter {
-  from  { background:#5264AE; }
-  to    { width:0; background:transparent; }
-}
-
 .super {
   display: flex;
   flex-wrap: wrap;
