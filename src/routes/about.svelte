@@ -1,3 +1,19 @@
+<script>
+    import { onMount } from "svelte"
+
+    onMount(() => {
+        var currentDay = document.querySelectorAll('.list-hours li')[new Date().getDay()];
+
+        if (currentDay) {
+            currentDay.classList.add('today');
+        }
+
+        if (document.querySelectorAll('[data-bss-baguettebox]').length > 0) {
+            baguetteBox.run('[data-bss-baguettebox]', { animation: 'slideIn' });
+        }
+    })
+</script>
+
 <main>
     <head>
     <meta charset="utf-8">
@@ -19,9 +35,9 @@
         <div class="container"><a class="navbar-brand text-uppercase d-lg-none text-expanded" href="#">ARTX</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarResponsive"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
             <div class="collapse navbar-collapse" id="navbarResponsive">
                 <ul class="navbar-nav mx-auto">
-                    <li class="nav-item"><a class="nav-link" href="index.html">Home</a></li>
-                    <li class="nav-item"><a class="nav-link" href="about.html">About us</a></li>
-                    <li class="nav-item"><a class="nav-link" href="products.html">Products</a></li>
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="about">About us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="bio">Bio</a></li>
                     <li class="nav-item" style="margin-right: 20;"><i class="fa fa-search" style="color: var(--bs-gray-300);margin-right: 15px;padding-right: 0;"></i><input type="search" id="search-field" class="search-field" name="search" style="color: var(--bs-white);background: var(--bs-gray-dark);margin-left: 20;border-style: none;border-color: var(--bs-gray-600);border-top-style: none;border-bottom-style: solid;"></li>
                 </ul>
             </div>

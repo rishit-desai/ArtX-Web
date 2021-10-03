@@ -10,5 +10,9 @@
     "@sveltejs/kit": "next",
     "svelte": "^3.42.6"
   },
-  "type": "module"
+  "type": "module",
+  "dependencies": {
+    "firebase": "^9.1.1",
+    "svelte-routing": "^1.6.0"
+  }
 }
