@@ -87,8 +87,8 @@
     </footer>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/baguettebox.js/1.10.0/baguetteBox.min.js"></script>
-    <script src="assets/js/current-day.js"></script>
-    <script src="assets/js/Lightbox-Gallery.js"></script>
+    <script src="/assets/js/current-day.js"></script>
+    <script src="/assets/js/Lightbox-Gallery.js"></script>
 </body>
 
 </main>
