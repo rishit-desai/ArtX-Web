@@ -1,23 +1,18 @@
 {
-  "name": "artx-web",
-  "version": "0.1.0",
-  "private": true,
-  "scripts": {
-    "dev": "next dev",
-    "build": "next build",
-    "start": "next start",
-    "lint": "next lint"
-  },
   "dependencies": {
-    "bootstrap": "^5.1.0",
-    "firebase": "^9.0.1",
-    "next": "11.0.1",
-    "react": "17.0.2",
-    "react-bootstrap": "^1.6.1",
-    "react-dom": "17.0.2"
+    "dotenv": "^10.0.0"
   },
-  "devDependencies": {
-    "eslint": "7.32.0",
-    "eslint-config-next": "11.0.1"
-  }
+  "name": "artx-web",
+  "version": "1.0.0",
+  "devDependencies": {},
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/The-Sypher/ArtX-Web.git"
+  },
+  "author": "The Sypher",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/The-Sypher/ArtX-Web/issues"
+  },
+  "homepage": "https://github.com/The-Sypher/ArtX-Web#readme"
 }
