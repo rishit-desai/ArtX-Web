@@ -16,70 +16,70 @@
         <div class="row" >
             <div class="col-sm-6 col-lg-4 mb-4">
                 <div class="card">
-                    <picture type="" srcset=""><img class="card-img-top p-3" src="assets/img/p-1.jpg" alt="" style="border-radius: 24px; object-fit: cover"></picture>
+                    <picture type="" srcset=""><img class="card-img-top p-3" src="assets/img/explore/images.jpg" alt="" style="border-radius: 24px; object-fit: cover"></picture>
                     <div class="card-body">
                         <h5 class="card-title">Titulo<br></h5>
-                        <p class="card-text text-muted">Parrafo<br></p><a href="">Link</a>
+                        <p class="card-text text-muted">Parrafo<br></p>
                     </div>
                 </div>
             </div>
             <div class="col-sm-6 col-lg-4 mb-4">
                 <div class="card">
-                    <picture type="" srcset=""><img class="card-img-top p-3" src="assets/img/p-2.jpg" alt="" style="border-radius: 24px; object-fit: cover"></picture>
+                    <picture type="" srcset=""><img class="card-img-top p-3" src="assets/img/explore/images (1).jpg" alt="" style="border-radius: 24px; object-fit: cover"></picture>
                     <div class="card-body">
                         <h5 class="card-title">Titulo<br></h5>
-                        <p class="card-text text-muted">Parrafo<br></p><a href="">Link</a>
+                        <p class="card-text text-muted">Parrafo<br></p>
                     </div>
                 </div>
             </div>
             <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card"><img class="card-img-top p-3" src="assets/img/p-3.jpg" alt="" style="border-radius: 24px; object-fit: cover">
+                <div class="card"><img class="card-img-top p-3" src="assets/img/explore/images (2).jpg" alt="" style="border-radius: 24px; object-fit: cover">
                     <div class="card-body">
                         <h5 class="card-title">Titulo<br></h5>
-                        <p class="card-text text-muted">Parrafo<br></p><a href="">Link</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card">
-                    <picture type="" srcset=""><img class="card-img-top p-3" src="assets/img/p-4.jpg" alt="" style="border-radius: 24px; object-fit: cover"></picture>
-                    <div class="card-body">
-                        <h5 class="card-title">Titulo<br></h5>
-                        <p class="card-text text-muted">Parrafo<br></p><a href="">Link</a>
+                        <p class="card-text text-muted">Parrafo<br></p>
                     </div>
                 </div>
             </div>
             <div class="col-sm-6 col-lg-4 mb-4">
                 <div class="card">
-                    <picture type="" srcset=""><img class="card-img-top p-3" src="assets/img/p-5.jpg" alt="" style="border-radius: 24px; object-fit: cover"></picture>
+                    <picture type="" srcset=""><img class="card-img-top p-3" src="assets/img/explore/images (3).jpg" alt="" style="border-radius: 24px; object-fit: cover"></picture>
                     <div class="card-body">
                         <h5 class="card-title">Titulo<br></h5>
-                        <p class="card-text text-muted">Parrafo<br></p><a href="">Link</a>
-                    </div>
-                </div>
-            </div>
-            <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card"><img class="card-img-top p-3" src="assets/img/p-6.jpg" alt="" style="border-radius: 24px; object-fit: cover">
-                    <div class="card-body">
-                        <h5 class="card-title">Titulo<br></h5>
-                        <p class="card-text text-muted">Parrafo<br></p><a href="">Link</a>
+                        <p class="card-text text-muted">Parrafo<br></p>
                     </div>
                 </div>
             </div>
             <div class="col-sm-6 col-lg-4 mb-4">
                 <div class="card">
-                    <picture type="" srcset=""><img class="card-img-top p-3" src="assets/img/p-7.jpg" alt="" style="border-radius: 24px; object-fit: cover"></picture>
+                    <picture type="" srcset=""><img class="card-img-top p-3" src="assets/img/explore/images (4).jpg" alt="" style="border-radius: 24px; object-fit: cover"></picture>
                     <div class="card-body">
                         <h5 class="card-title">Titulo<br></h5>
-                        <p class="card-text text-muted">Parrafo<br></p><a href="">Link</a>
+                        <p class="card-text text-muted">Parrafo<br></p>
                     </div>
                 </div>
             </div>
             <div class="col-sm-6 col-lg-4 mb-4">
-                <div class="card"><img class="card-img-top p-3" src="assets/img/p-8.jpg" alt="" style="border-radius: 24px; object-fit: cover">
+                <div class="card"><img class="card-img-top p-3" src="assets/img/explore/images (5).jpg" alt="" style="border-radius: 24px; object-fit: cover">
                     <div class="card-body">
                         <h5 class="card-title">Titulo<br></h5>
-                        <p class="card-text text-muted">Parrafo<br></p><a href="">Link</a>
+                        <p class="card-text text-muted">Parrafo<br></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card">
+                    <picture type="" srcset=""><img class="card-img-top p-3" src="assets/img/explore/download (3).jpg" alt="" style="border-radius: 24px; object-fit: cover"></picture>
+                    <div class="card-body">
+                        <h5 class="card-title">Titulo<br></h5>
+                        <p class="card-text text-muted">Parrafo<br></p>
+                    </div>
+                </div>
+            </div>
+            <div class="col-sm-6 col-lg-4 mb-4">
+                <div class="card"><img class="card-img-top p-3" src="assets/img/explore/images (6).jpg" alt="" style="border-radius: 24px; object-fit: cover">
+                    <div class="card-body">
+                        <h5 class="card-title">Titulo<br></h5>
+                        <p class="card-text text-muted">Parrafo<br></p>
                     </div>
                 </div>
             </div>
