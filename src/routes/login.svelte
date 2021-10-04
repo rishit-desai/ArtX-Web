@@ -1,14 +1,14 @@
 <script>
-    import { auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, googleAuth, signInWithPopup } from "../firebase"
+    import { auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, googleAuth, signInWithPopup, facebookAuth } from "../firebase"
     
-    let email = "t@t.com", password = "rishit";
+    let email = "t@t.com", password = "rishit", name = "Rishit Desai";
 
     async function signIn(e) {
         e.preventDefault()
         signInWithEmailAndPassword(auth, email, password)
             .then((userCredential) => {
                 // Signed in 
-                console.log(userCredential.user);
+                window.alert(userCredential.user.email+"\nLogged In");
                 window.location.href = "/"
                 // ...
             })
@@ -23,7 +23,7 @@
         createUserWithEmailAndPassword(auth, email, password)
         .then((userCredential) => {
             // Signed in 
-            console.log(userCredential.user);
+            window.alert(userCredential.user.email+"\nLogged In");
             window.location.href = "/"
             // ...
         })
@@ -34,16 +34,38 @@
         });
     }
 
-    async function signUpWithGoogle(e) {
+    async function withGoogle(e) {
         e.preventDefault()
-        console.log("HE");
         signInWithPopup(auth, googleAuth)
             .then((result) => {
                 // This gives you a Google Access Token. You can use it to access the Google API.
                 // const credential = GoogleAuthProvider.credentialFromResult(result);
                 // const token = credential.accessToken;
                 // The signed-in user info.
-                console.log(result.user)
+                window.alert(result.user.email+"\nLogged In");
+                window.location.href = "/"
+                // ...
+            }).catch((error) => {
+                // Handle Errors here.
+                console.log(error.code);
+                console.log(error.message);
+                // The email of the user's account used.
+                // const email = error.email;
+                // // The AuthCredential type that was used.
+                // const credential = GoogleAuthProvider.credentialFromError(error);
+                // ...
+            });
+    }
+
+    async function withFacebook(e) {
+        e.preventDefault()
+        signInWithPopup(auth, facebookAuth)
+            .then((result) => {
+                // This gives you a Google Access Token. You can use it to access the Google API.
+                // const credential = GoogleAuthProvider.credentialFromResult(result);
+                // const token = credential.accessToken;
+                // The signed-in user info.
+                window.alert(result.user.email+"\nLogged In");
                 console.log(userCredential.user);
                 window.location.href = "/"
                 // ...
@@ -80,6 +102,9 @@
                         <div class="form-group mb-3"><label class="form-label text-secondary">Email</label><input class="form-control" type="text" required="" inputmode="email" bind:value={email}></div>
                         <div class="form-group mb-3"><label class="form-label text-secondary">Password</label><input class="form-control" type="password" required="" bind:value={password}></div><button class="btn btn-info mt-2" type="submit" style="width: 90px;">Log In</button><button class="btn btn-primary" type="button" data-bs-toggle="modal" data-bs-target="#signin" style="width: 90px;margin-top: 10px;margin-left: 20px;">Sign Up</button>
                     </form>
+                    <br />
+                    <div class="text-center"><button class="btn btn-primary text-start" style="width: 100%; display: inline" type="button" on:click={withFacebook}><i class="fa fa-facebook"></i>&nbsp; Continue with Facebook</button></div>
+                    <div class="text-center mt-2"><button class="btn btn-light text-start border-dark" style="width: 100%; display: inline;" type="button" on:click={withGoogle}><i class="fa fa-google"></i>&nbsp; Continue with Google</button></div>
                     <p class="mt-3 mb-0"><a class="text-info small" href="#">Forgot your email or password</a></p>
                 </div>
             </div>
@@ -96,25 +121,24 @@
                         <h4>Sign Up Now</h4><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
                     </div>
                     <div class="modal-body">
-                        <div class="text-center"><button class="btn btn-primary text-start" style="width: 100%;" type="button"><i class="fa fa-facebook"></i>&nbsp; Continue with Facebook</button></div>
-                        <div class="text-center mt-2"><button class="btn btn-light text-start border-dark" style="width: 100%;" type="button" on:click={signUpWithGoogle}><i class="fa fa-google"></i>&nbsp; Continue with Google</button></div>
-                        <form class="mt-4">
+                        <div class="text-center"><button class="btn btn-primary text-start" style="width: 100%;" type="button" on:click={withFacebook}><i class="fa fa-facebook"></i>&nbsp; Continue with Facebook</button></div>
+                        <div class="text-center mt-2"><button class="btn btn-light text-start border-dark" style="width: 100%;" type="button" on:click={withGoogle}><i class="fa fa-google"></i>&nbsp; Continue with Google</button></div>
+                        <form class="mt-4" on:submit={signUp}>
                             <div class="form-group mb-3">
-                                <div class="input-group"><span class="text-primary input-group-text"><i class="fa fa-user-o"></i></span><input class="form-control" type="text" required="" placeholder="Full Name"></div>
+                                <div class="input-group"><span class="text-primary input-group-text"><i class="fa fa-user-o"></i></span><input class="form-control" type="text" required="" placeholder="Full Name" bind:value={name}></div>
                             </div>
                             <div class="form-group mb-3">
-                                <div class="input-group"><span class="text-primary input-group-text"><i class="fa fa-envelope-o"></i></span><input class="form-control" type="email" required="" placeholder="Email"></div>
+                                <div class="input-group"><span class="text-primary input-group-text"><i class="fa fa-envelope-o"></i></span><input class="form-control" type="email" required="" placeholder="Email" bind:value={email}></div>
                             </div>
                             <div class="form-group mb-3">
-                                <div class="input-group"><span class="text-primary input-group-text"><i class="fa fa-lock"></i></span><input class="form-control" type="password" required="" placeholder="Password"></div>
+                                <div class="input-group"><span class="text-primary input-group-text"><i class="fa fa-lock"></i></span><input class="form-control" type="password" required="" placeholder="Password" bind:value={password}></div>
                             </div>
                             <div class="form-group mb-3">
                                 <div class="form-check"><input class="form-check-input" type="checkbox" id="formCheck-1" required="" checked=""><label class="form-check-label" for="formCheck-1">I agree all the terms and conditions.</label></div>
                             </div>
-                            <div class="form-group mb-3"><button class="btn btn-primary btn-lg" style="width: 100%;" type="button">Sign Up</button></div>
+                            <div class="form-group mb-3"><button class="btn btn-primary btn-lg" style="width: 100%;" type="submit">Sign Up</button></div>
                         </form>
                         <hr style="background-color: #bababa;">
-                        <p class="text-center">Already have an Account?&nbsp;<a class="text-decoration-none" href="index.html" data-bs-dismiss="modal" data-bs-toggle="modal" data-bs-target="#signup">Log In</a></p>
                     </div>
                 </div>
             </div>

@@ -16,18 +16,11 @@
                     data-bs-target="#"></button>
                 <div class="collapse navbar-collapse">
                     <ul class="navbar-nav sidebar-nav" id="sidebar-nav">
-                        <li class="nav-item sidebar-brand"><a class="nav-link active js-scroll-trigger"
-                                href="#page-top">Create</a></li>
-                        <li class="nav-item sidebar-nav-item"><a class="nav-link js-scroll-trigger"
-                                href="#page-top">Home</a></li>
-                        <li class="nav-item sidebar-nav-item"><a class="nav-link js-scroll-trigger" href="#about">About</a>
-                        </li>
-                        <li class="nav-item sidebar-nav-item"><a class="nav-link js-scroll-trigger"
-                                href="#services">Services</a></li>
-                        <li class="nav-item sidebar-nav-item"><a class="nav-link js-scroll-trigger"
-                                href="#portfolio">Portfolio</a></li>
-                        <li class="nav-item sidebar-nav-item"><a class="nav-link js-scroll-trigger"
-                                href="#contact">Contact</a></li>
+                        <li class="nav-item sidebar-brand"><a class="nav-link active js-scroll-trigger" href="#page-top">New Post</a></li>
+                        <li class="nav-item sidebar-nav-item"><a class="nav-link js-scroll-trigger" href="/">Home</a></li>
+                        <li class="nav-item sidebar-nav-item"><a class="nav-link js-scroll-trigger" href="/about">About</a></li>
+                        <li class="nav-item sidebar-nav-item"><a class="nav-link js-scroll-trigger" href="/explore">Explore</a></li>
+                        <li class="nav-item sidebar-nav-item"><a class="nav-link js-scroll-trigger" href="/bio">Bio</a></li>
                     </ul>
                 </div>
             </div>
@@ -64,6 +57,80 @@
             </div><a class="js-scroll-trigger scroll-to-top rounded" href="#page-top"><i class="fa fa-angle-up"></i></a>
         </footer>
         <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
-        <script src="/assets/js/stylish-portfolio.js"></script>
     </body>
 </main>
+
+<script>
+    import { onMount } from "svelte";
+
+    onMount(() => {
+        var menuToggle = document.querySelector('.menu-toggle');
+        var sidebar = document.querySelector('#sidebar-wrapper');
+        
+        if (menuToggle) {
+            // Closes the sidebar menu
+            menuToggle.addEventListener('click', function(e) {
+            e.preventDefault();
+
+            sidebar.classList.toggle('active');
+            menuToggle.classList.toggle('active');
+            
+            var icon = menuToggle.querySelector('.fa-bars, .fa-times');
+            
+            if (icon) {
+                if (icon.classList.contains('fa-times')) {
+                icon.classList.remove('fa-times');
+                icon.classList.add('fa-bars');
+                } else if (icon.classList.contains('fa-bars')) {
+                icon.classList.remove('fa-bars');
+                icon.classList.add('fa-times');
+                }
+            }
+
+            });
+        }
+
+        var navbarCollapse = document.querySelector('.navbar-collapse');
+
+        if (navbarCollapse) {
+            var navbarItems = navbarCollapse.querySelectorAll('a');
+
+            // Closes responsive menu when a scroll trigger link is clicked
+            for (var item of navbarItems) {
+            item.addEventListener('click', function (event) {
+                sidebar.classList.remove('active');
+                menuToggle.classList.remove('active');
+                
+                var icon = menuToggle.querySelector('.fa-bars, .fa-times');
+            
+                if (icon) {
+                if (icon.classList.contains('fa-times')) {
+                    icon.classList.remove('fa-times');
+                    icon.classList.add('fa-bars');
+                } else if (icon.classList.contains('fa-bars')) {
+                    icon.classList.remove('fa-bars');
+                    icon.classList.add('fa-times');
+                }
+                }
+            });
+            }
+        }
+
+        // Scroll to top button appear
+        var scrollToTop = document.querySelector('.scroll-to-top');
+        
+        if (scrollToTop) {
+            
+            // Scroll to top button appear
+            window.addEventListener('scroll', function() {
+            var scrollDistance = window.pageYOffset;
+
+            if (scrollDistance > 100) {
+                scrollToTop.style.display = 'block';
+            } else {
+                scrollToTop.style.display = 'none';
+            }
+            });
+        }
+    })
+</script>
