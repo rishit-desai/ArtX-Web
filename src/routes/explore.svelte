@@ -27,7 +27,7 @@
                 <div class="card">
                     <picture type="" srcset=""><img class="card-img-top p-3" src="assets/img/explore/images (1).jpg" alt="" style="border-radius: 24px; object-fit: cover"></picture>
                     <div class="card-body">
-                        <h5 class="card-title">Titulo<br></h5>
+                        <h5 class="card-title">Nature<br></h5>
                         <p class="card-text text-muted">Parrafo<br></p>
                     </div>
                 </div>
@@ -35,7 +35,7 @@
             <div class="col-sm-6 col-lg-4 mb-4">
                 <div class="card"><img class="card-img-top p-3" src="assets/img/explore/images (2).jpg" alt="" style="border-radius: 24px; object-fit: cover">
                     <div class="card-body">
-                        <h5 class="card-title">Titulo<br></h5>
+                        <h5 class="card-title">Wavy Spring<br></h5>
                         <p class="card-text text-muted">Parrafo<br></p>
                     </div>
                 </div>
@@ -44,7 +44,7 @@
                 <div class="card">
                     <picture type="" srcset=""><img class="card-img-top p-3" src="assets/img/explore/images (3).jpg" alt="" style="border-radius: 24px; object-fit: cover"></picture>
                     <div class="card-body">
-                        <h5 class="card-title">Titulo<br></h5>
+                        <h5 class="card-title">Hubris<br></h5>
                         <p class="card-text text-muted">Parrafo<br></p>
                     </div>
                 </div>
@@ -53,7 +53,7 @@
                 <div class="card">
                     <picture type="" srcset=""><img class="card-img-top p-3" src="assets/img/explore/images (4).jpg" alt="" style="border-radius: 24px; object-fit: cover"></picture>
                     <div class="card-body">
-                        <h5 class="card-title">Titulo<br></h5>
+                        <h5 class="card-title">Reflect<br></h5>
                         <p class="card-text text-muted">Parrafo<br></p>
                     </div>
                 </div>
@@ -61,7 +61,7 @@
             <div class="col-sm-6 col-lg-4 mb-4">
                 <div class="card"><img class="card-img-top p-3" src="assets/img/explore/images (5).jpg" alt="" style="border-radius: 24px; object-fit: cover">
                     <div class="card-body">
-                        <h5 class="card-title">Titulo<br></h5>
+                        <h5 class="card-title">Eye<br></h5>
                         <p class="card-text text-muted">Parrafo<br></p>
                     </div>
                 </div>
@@ -70,7 +70,7 @@
                 <div class="card">
                     <picture type="" srcset=""><img class="card-img-top p-3" src="assets/img/explore/download (3).jpg" alt="" style="border-radius: 24px; object-fit: cover"></picture>
                     <div class="card-body">
-                        <h5 class="card-title">Titulo<br></h5>
+                        <h5 class="card-title">Starry night<br></h5>
                         <p class="card-text text-muted">Parrafo<br></p>
                     </div>
                 </div>
@@ -78,7 +78,7 @@
             <div class="col-sm-6 col-lg-4 mb-4">
                 <div class="card"><img class="card-img-top p-3" src="assets/img/explore/images (6).jpg" alt="" style="border-radius: 24px; object-fit: cover">
                     <div class="card-body">
-                        <h5 class="card-title">Titulo<br></h5>
+                        <h5 class="card-title">Tradition<br></h5>
                         <p class="card-text text-muted">Parrafo<br></p>
                     </div>
                 </div>
