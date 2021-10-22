@@ -1,14 +1,14 @@
 import { initializeApp } from 'firebase/app'
-import { getFirestore } from "firebase/firestore/lite"
+import { getFirestore } from "firebase/firestore"
 import { getAuth, signInWithEmailAndPassword, createUserWithEmailAndPassword, signInWithPopup, GoogleAuthProvider, FacebookAuthProvider } from "firebase/auth"
-import { getStorage,  } from "firebase/storage"
+import { getStorage } from "firebase/storage"
 
 const firebaseApp = initializeApp({
     apiKey: import.meta.env.VITE_FIREBASE_APIKEY,
     authDomain: import.meta.env.VITE_FIREBASE_AUTHDOMAIN,
     projectId: import.meta.env.VITE_FIREBASE_PROJECTID,
     storageBucket: import.meta.env.VITE_FIREBASE_STORAGEBUCKET,
-    messagingSenderId: import.meta.env.VITE_FIREBASE_SENDFERID,
+    messagingSenderId: import.meta.env.VITE_FIREBASE_SENDERID,
     appId: import.meta.env.VITE_FIREBASE_APPID
 })
 

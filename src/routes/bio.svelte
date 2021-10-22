@@ -33,36 +33,13 @@
             <h2 class="text-uppercase text-center text-secondary">arts</h2>
             <hr class="star-dark mb-5">
             <div class="row">
-                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-1" data-bs-toggle="modal">
+                {#each posts as post, i}
+                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-{i + 1}" data-bs-toggle="modal">
                         <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
                             <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i class="fa fa-search-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="assets/img/portfolio/cabin.png">
+                        </div><img class="img-fluid" src={post.src}>
                     </a></div>
-                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-2" data-bs-toggle="modal">
-                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
-                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i class="fa fa-search-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="assets/img/portfolio/cake.png">
-                    </a></div>
-                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-3" data-bs-toggle="modal">
-                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
-                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i class="fa fa-search-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="assets/img/portfolio/circus.png">
-                    </a></div>
-                <div class="col-md-6 col-lg-4 offset-lg-0"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-4" data-bs-toggle="modal">
-                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
-                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i class="fa fa-search-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="assets/img/portfolio/game.png">
-                    </a></div>
-                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-5" data-bs-toggle="modal">
-                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
-                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i class="fa fa-search-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="assets/img/portfolio/safe.png">
-                    </a></div>
-                <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-6" data-bs-toggle="modal">
-                        <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
-                            <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i class="fa fa-search-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src="assets/img/portfolio/submarine.png">
-                    </a></div>
+                {/each}
             </div>
         </div>
     </section>
@@ -109,7 +86,8 @@
         <div class="container"><small>Copyright © ArtX2021</small></div>
     </div>
     <div class="d-lg-none scroll-to-top position-fixed rounded"><a class="text-center d-block rounded text-white" href="#page-top"><i class="fa fa-chevron-up"></i></a></div>
-    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-1">
+    {#each posts as post, i}
+    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-{i+1}">
         <div class="modal-dialog modal-lg" role="document">
             <div class="modal-content">
                 <div class="modal-header"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
@@ -117,9 +95,9 @@
                     <div class="container text-center">
                         <div class="row">
                             <div class="col-lg-8 mx-auto">
-                                <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
-                                <hr class="star-dark mb-5"><img class="img-fluid mb-5" src="assets/img/portfolio/cabin.png">
-                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
+                                <h2 class="text-uppercase text-secondary mb-0">{post.name}</h2>
+                                <hr class="star-dark mb-5"><img class="img-fluid mb-5" src={post.src}>
+                                <p class="mb-5">{post.description}</p>
                             </div>
                         </div>
                     </div>
@@ -128,122 +106,42 @@
             </div>
         </div>
     </div>
-    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-2">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                <div class="modal-body">
-                    <div class="container text-center">
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
-                                <hr class="star-dark mb-5"><img class="img-fluid mb-5" src="assets/img/portfolio/cake.png">
-                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
-            </div>
-        </div>
-    </div>
-    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-3">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                <div class="modal-body">
-                    <div class="container text-center">
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
-                                <hr class="star-dark mb-5"><img class="img-fluid mb-5" src="assets/img/portfolio/circus.png">
-                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
-            </div>
-        </div>
-    </div>
-    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-4">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                <div class="modal-body">
-                    <div class="container text-center">
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
-                                <hr class="star-dark mb-5"><img class="img-fluid mb-5" src="assets/img/portfolio/game.png">
-                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
-            </div>
-        </div>
-    </div>
-    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-5">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                <div class="modal-body">
-                    <div class="container text-center">
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
-                                <hr class="star-dark mb-5"><img class="img-fluid mb-5" src="assets/img/portfolio/safe.png">
-                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
-            </div>
-        </div>
-    </div>
-    <div class="modal text-center" role="dialog" tabindex="-1" id="portfolio-modal-6">
-        <div class="modal-dialog modal-lg" role="document">
-            <div class="modal-content">
-                <div class="modal-header"><button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button></div>
-                <div class="modal-body">
-                    <div class="container text-center">
-                        <div class="row">
-                            <div class="col-lg-8 mx-auto">
-                                <h2 class="text-uppercase text-secondary mb-0">Project Name</h2>
-                                <hr class="star-dark mb-5"><img class="img-fluid mb-5" src="assets/img/portfolio/submarine.png">
-                                <p class="mb-5">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Mollitia neque assumenda ipsam nihil, molestias magnam, recusandae quos quis inventore quisquam velit asperiores, vitae? Reprehenderit soluta, eos quod consequuntur itaque. Nam.</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="modal-footer pb-5"><a class="btn btn-primary btn-lg mx-auto rounded-pill portfolio-modal-dismiss" role="button" data-bs-dismiss="modal"><i class="fa fa-close"></i>&nbsp;Close Project</a></div>
-            </div>
-        </div>
-    </div>
+    {/each}
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js"></script>
+
+    {#each test as t}
+        {t}
+    {/each}
+
 </body>
 </main>
 
 <script>
     import { onMount } from 'svelte'
+    import { db } from "$lib/firebase"
+    import { query, collection, where, getDocs, doc } from "firebase/firestore"
 
-    onMount(() => {
+    let test = ["hello"]
+    let postssrc = []
+
+    const username = "picasso"
+
+    let posts = []
+
+    onMount( async () => {
         var scrollToTop = document.querySelector('.scroll-to-top');
-  
+
         if (scrollToTop) {
             
             // Scroll to top button appear
             window.addEventListener('scroll', function() {
-            var scrollDistance = window.pageYOffset;
+                var scrollDistance = window.pageYOffset;
 
-            if (scrollDistance > 100) {
-                scrollToTop.style.display = 'block';
-            } else {
-                scrollToTop.style.display = 'none';
-            }
+                if (scrollDistance > 100) {
+                    scrollToTop.style.display = 'block';
+                } else {
+                    scrollToTop.style.display = 'none';
+                }
             });
         }
 
@@ -254,19 +152,19 @@
             var navbarCollapse = mainNav.querySelector('.navbar-collapse');
             
             if (navbarCollapse) {
+                
+                // var collapse = new bootstrap.Collapse(navbarCollapse, {
+                //     toggle: false
+                // });
             
-            var collapse = new bootstrap.Collapse(navbarCollapse, {
-                toggle: false
-            });
-            
-            var navbarItems = navbarCollapse.querySelectorAll('a');
-            
-            // Closes responsive menu when a scroll trigger link is clicked
-            for (var item of navbarItems) {
-                item.addEventListener('click', function (event) {
-                collapse.hide();
-                });
-            }
+                var navbarItems = navbarCollapse.querySelectorAll('a');
+                
+                // Closes responsive menu when a scroll trigger link is clicked
+                for (var item of navbarItems) {
+                    item.addEventListener('click', function (event) {
+                    collapse.hide();
+                    });
+                }
             }
 
             // Collapse Navbar
@@ -285,6 +183,25 @@
             // Collapse the navbar when page is scrolled
             document.addEventListener("scroll", collapseNavbar);
         }
-    })
 
+        const q = query(collection(db,'users', username, "images"))
+        const res = await getDocs(q);
+
+        let array = []
+    
+        res.forEach(doc => {
+            let data = doc.data()
+            array.push({
+                name: data.name,
+                description: data.description,
+                price: data.price,
+                src: `https://storage.googleapis.com/artx-in.appspot.com/users/picasso/images/${data.url}`
+            })
+            postssrc.push(`https://storage.googleapis.com/artx-in.appspot.com/users/picasso/images/${data.url}`)
+        })
+        posts = array
+    })
+    
+
+    console.log(posts);
 </script>

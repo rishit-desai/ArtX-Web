@@ -1,5 +1,5 @@
 <script>
-    import { auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, googleAuth, signInWithPopup, facebookAuth } from "../firebase"
+    import { auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, googleAuth, signInWithPopup, facebookAuth } from "$lib/firebase.js"
     
     let email = "t@t.com", password = "rishit", name = "Rishit Desai";
 
@@ -38,10 +38,6 @@
         e.preventDefault()
         signInWithPopup(auth, googleAuth)
             .then((result) => {
-                // This gives you a Google Access Token. You can use it to access the Google API.
-                // const credential = GoogleAuthProvider.credentialFromResult(result);
-                // const token = credential.accessToken;
-                // The signed-in user info.
                 window.alert(result.user.email+"\nLogged In");
                 window.location.href = "/"
                 // ...
@@ -49,11 +45,6 @@
                 // Handle Errors here.
                 console.log(error.code);
                 console.log(error.message);
-                // The email of the user's account used.
-                // const email = error.email;
-                // // The AuthCredential type that was used.
-                // const credential = GoogleAuthProvider.credentialFromError(error);
-                // ...
             });
     }
 
@@ -61,10 +52,6 @@
         e.preventDefault()
         signInWithPopup(auth, facebookAuth)
             .then((result) => {
-                // This gives you a Google Access Token. You can use it to access the Google API.
-                // const credential = GoogleAuthProvider.credentialFromResult(result);
-                // const token = credential.accessToken;
-                // The signed-in user info.
                 window.alert(result.user.email+"\nLogged In");
                 console.log(userCredential.user);
                 window.location.href = "/"
@@ -73,11 +60,6 @@
                 // Handle Errors here.
                 console.log(error.code);
                 console.log(error.message);
-                // The email of the user's account used.
-                // const email = error.email;
-                // // The AuthCredential type that was used.
-                // const credential = GoogleAuthProvider.credentialFromError(error);
-                // ...
             });
     }
 </script>
