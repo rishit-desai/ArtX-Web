@@ -22,8 +22,8 @@
         </div>
     </nav>
     <header class="text-center text-white bg-primary masthead">
-        <div class="container"><img class="img-fluid d-block mx-auto mb-5" src="assets/img/profile.png">
-            <h1>JOE MAMA</h1>
+        <div class="container"><img class="img-fluid d-block mx-auto mb-5" src={`https://storage.googleapis.com/artx-in.appspot.com/users/${username}/displayPicture.jfif`}>
+            <h1>{username}</h1>
             <hr class="star-light">
             <h2 class="font-weight-light mb-0">&nbsp;Graphic Artist - Canvas</h2>
         </div>
