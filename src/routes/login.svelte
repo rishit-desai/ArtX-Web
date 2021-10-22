@@ -1,15 +1,21 @@
 <script>
-    import { auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, googleAuth, signInWithPopup, facebookAuth } from "$lib/firebase.js"
+    import { auth, signInWithEmailAndPassword, createUserWithEmailAndPassword, googleAuth, signInWithPopup, facebookAuth, db } from "$lib/firebase.js"
     
-    let email = "t@t.com", password = "rishit", name = "Rishit Desai";
+    import { getDocs, query, collection,where, setDoc, doc } from "@firebase/firestore";
+    let email,password,name,bio;
 
     async function signIn(e) {
         e.preventDefault()
         signInWithEmailAndPassword(auth, email, password)
-            .then((userCredential) => {
+            .then(async (userCredential) => {
                 // Signed in 
                 window.alert(userCredential.user.email+"\nLogged In");
-                window.location.href = "/"
+                const q = query(collection(db,'users'), where("email","==",`${userCredential.user.email}`))
+                const res = await getDocs(q);
+                localStorage.setItem('user_email',userCredential.user.email);
+                localStorage.setItem('user',res.docs[0].data()['lastName']);
+                localStorage.setItem('user_id',res.docs[0].id)
+                window.location.href = '/'
                 // ...
             })
             .catch((error) => {
@@ -24,6 +30,13 @@
         .then((userCredential) => {
             // Signed in 
             window.alert(userCredential.user.email+"\nLogged In");
+            let lname = userCredential.user.email.split('@')[0];
+            setDoc(doc(db,"users",`${lname}`),{
+                firstName: name,
+                lastName: lname,
+                email: userCredential.user.email,
+                displayPicture: true
+            })
             window.location.href = "/"
             // ...
         })
@@ -37,8 +50,13 @@
     async function withGoogle(e) {
         e.preventDefault()
         signInWithPopup(auth, googleAuth)
-            .then((result) => {
+            .then(async (userCredential) => {
                 window.alert(result.user.email+"\nLogged In");
+                const q = query(collection(db,'users'), where("email","==",`${userCredential.user.email}`))
+                const res = await getDocs(q);
+                localStorage.setItem('user_email',userCredential.user.email);
+                localStorage.setItem('user',res.docs[0].data()['lastName']);
+                localStorage.setItem('user_id',res.docs[0].id)
                 window.location.href = "/"
                 // ...
             }).catch((error) => {
@@ -111,6 +129,9 @@
                             </div>
                             <div class="form-group mb-3">
                                 <div class="input-group"><span class="text-primary input-group-text"><i class="fa fa-envelope-o"></i></span><input class="form-control" type="email" required="" placeholder="Email" bind:value={email}></div>
+                            </div>
+                            <div class="form-group mb-3">
+                                <div class="input-group"><span class="text-primary input-group-text"><i class="fa fa-book"></i></span><input class="form-control" type="text" required="" placeholder="Bio" bind:value={bio}></div>
                             </div>
                             <div class="form-group mb-3">
                                 <div class="input-group"><span class="text-primary input-group-text"><i class="fa fa-lock"></i></span><input class="form-control" type="password" required="" placeholder="Password" bind:value={password}></div>

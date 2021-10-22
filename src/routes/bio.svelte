@@ -22,7 +22,7 @@
         </div>
     </nav>
     <header class="text-center text-white bg-primary masthead">
-        <div class="container"><img class="img-fluid d-block mx-auto mb-5" src={`https://storage.googleapis.com/artx-in.appspot.com/users/${username}/displayPicture.jfif`}>
+        <div class="container"><img class="img-fluid d-block mx-auto mb-5" src={`https://picsum.photos/500/500`} alt={"Display Picture"}>
             <h1>{username}</h1>
             <hr class="star-light">
             <h2 class="font-weight-light mb-0">&nbsp;Graphic Artist - Canvas</h2>
@@ -37,7 +37,7 @@
                 <div class="col-md-6 col-lg-4"><a class="d-block mx-auto portfolio-item" href="#portfolio-modal-{i + 1}" data-bs-toggle="modal">
                         <div class="d-flex portfolio-item-caption position-absolute h-100 w-100">
                             <div class="text-center text-white my-auto portfolio-item-caption-content w-100"><i class="fa fa-search-plus fa-3x"></i></div>
-                        </div><img class="img-fluid" src={post.src}>
+                        </div><img class="img-fluid" src={post.src} alt={post.name}>
                     </a></div>
                 {/each}
             </div>
@@ -51,16 +51,16 @@
                 <div class="col-lg-8 mx-auto">
                     <form id="contactForm" name="sentMessage" novalidate="novalidate">
                         <div class="control-group">
-                            <div class="mb-0 form-floating controls pb-2"><input class="form-control" type="text" id="name" required="" placeholder="Name" name="name"><label class="form-label">Name</label><small class="form-text text-danger help-block"></small></div>
+                            <div class="mb-0 form-floating controls pb-2"><input class="form-control" type="text" id="name" required="" placeholder="Name" name="name"><label for="" class="form-label">Name</label><small class="form-text text-danger help-block"></small></div>
                         </div>
                         <div class="control-group">
-                            <div class="mb-0 form-floating controls pb-2"><input class="form-control" type="email" id="email" required="" placeholder="Email Address" name="email"><label class="form-label">Email Address</label><small class="form-text text-danger help-block"></small></div>
+                            <div class="mb-0 form-floating controls pb-2"><input class="form-control" type="email" id="email" required="" placeholder="Email Address" name="email"><label for="" class="form-label">Email Address</label><small class="form-text text-danger help-block"></small></div>
                         </div>
                         <div class="control-group">
-                            <div class="mb-0 form-floating controls pb-2"><input class="form-control" type="tel" id="phone" required="" placeholder="Phone Number" name="phone"><label class="form-label">Phone Number</label><small class="form-text text-danger help-block"></small></div>
+                            <div class="mb-0 form-floating controls pb-2"><input class="form-control" type="tel" id="phone" required="" placeholder="Phone Number" name="phone"><label for="" class="form-label">Phone Number</label><small class="form-text text-danger help-block"></small></div>
                         </div>
                         <div class="control-group">
-                            <div class="mb-5 form-floating controls pb-2"><textarea class="form-control" id="message" required="" placeholder="Message" style="height: 150px;"></textarea><label class="form-label">Message</label><small class="form-text text-danger help-block"></small></div>
+                            <div class="mb-5 form-floating controls pb-2"><textarea class="form-control" id="message" required="" placeholder="Message" style="height: 150px;"></textarea><label for="" class="form-label">Message</label><small class="form-text text-danger help-block"></small></div>
                         </div><button class="btn btn-primary btn-xl" id="sendMessageButton" type="submit" style="background: rgb(255,209,91);">Send</button>
                         <div id="success"></div>
                         <div></div>
@@ -77,7 +77,7 @@
                         <p class="lead">LOVES TO PAINT IN FREE TIME...................................................................................call me</p>
                     </div>
                 </div>
-                <div class="text-center mt-4"><a class="btn btn-outline-light btn-xl" role="button" href="#"><span>call me!</span></a></div>
+                
             </div>
         </section>
     </section>
@@ -124,11 +124,11 @@
     let test = ["hello"]
     let postssrc = []
 
-    const username = "picasso"
-
+    let username;
     let posts = []
-
+    
     onMount( async () => {
+        username = localStorage.getItem('user')
         var scrollToTop = document.querySelector('.scroll-to-top');
 
         if (scrollToTop) {
